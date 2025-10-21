@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quizz_app/data/constants.dart';
+import 'package:quizz_app/data/notifiers.dart';
+import 'package:quizz_app/views/pages/home_page.dart';
+import 'package:quizz_app/widgets/switch_theme_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +18,35 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Container(height: double.infinity,),
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotifier,
+      builder: (context, isDarkMode, child) {
+        return MaterialApp(
+          title: KConstants.appName,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            useMaterial3: true,
+            textTheme: TextTheme(
+              bodyMedium: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 16,
+                color: Colors.deepPurple,
+              ),
+            ),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: isDarkMode ? Colors.amber : Colors.amber,
+              brightness: isDarkMode ? Brightness.dark : Brightness.light,
+            ),
+          ),
+          home: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.amber,
+              actions: [SwitchThemeWidget()],
+            ),
+            body: HomePage(),
+          ),
+        );
+      },
     );
   }
 }

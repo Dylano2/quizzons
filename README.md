@@ -2,15 +2,8 @@
 
 Une application de quizz !
 
-## Getting Started
+## Réalisation
+Ce projet d'application a été développé dans le but principal d'apprendre Flutter.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Concept : 
+Un quiz simple de 5 questions sur un thème aléatoire avec la possibilité de choisir le niveau de difficulté au préalable.
