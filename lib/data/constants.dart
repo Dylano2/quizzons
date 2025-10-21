@@ -3,10 +3,21 @@ import 'package:flutter/material.dart';
 class KConstants {
   static const String themeModeKey = 'isDarkMode';
   static const String pseudoKey = 'pseudo';
+  static const String difficultyKey = 'difficulty';
+
   static const String appName = 'Quizzons !';
   static const String startButton = "Commencer";
   static const String enterYourName = "Entre un pseudo : ";
   static const String submitNameButton = "C'est parti !";
+  static const String choseYourDifficulty = "Choisis la difficulté";
+  static const String easyDifficulty = "Facile";
+  static const String mediumDifficulty = "Moyenne";
+  static const String hardDifficulty = "Hardcore";
+  static const List<String> difficultyLevels = [
+    easyDifficulty,
+    mediumDifficulty,
+    hardDifficulty,
+  ];
 }
 
 class KTextStyle {
