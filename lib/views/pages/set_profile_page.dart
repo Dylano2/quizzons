@@ -12,7 +12,7 @@ class SetProfilePage extends StatefulWidget {
 }
 
 class _SetProfilePageState extends State<SetProfilePage> {
-  TextEditingController controller = TextEditingController(text: "mama");
+  TextEditingController controller = TextEditingController();
   String? error;
 
   @override
