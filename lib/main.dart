@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quizz_app/data/constants.dart';
 import 'package:quizz_app/data/notifiers.dart';
 import 'package:quizz_app/views/pages/home_page.dart';
-import 'package:quizz_app/widgets/switch_theme_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,13 +37,7 @@ class _MyAppState extends State<MyApp> {
               brightness: isDarkMode ? Brightness.dark : Brightness.light,
             ),
           ),
-          home: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.amber,
-              actions: [SwitchThemeWidget()],
-            ),
-            body: HomePage(),
-          ),
+          home: HomePage(),
         );
       },
     );

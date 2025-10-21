@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class KConstants {
   static const String themeModeKey = 'isDarkMode';
+  static const String pseudoKey = 'pseudo';
   static const String appName = 'Quizzons !';
   static const String startButton = "Commencer";
+  static const String enterYourName = "Entre un pseudo : ";
+  static const String submitNameButton = "C'est parti !";
 }
 
 class KTextStyle {
@@ -16,6 +19,16 @@ class KTextStyle {
     fontSize: 50,
     fontWeight: FontWeight.w300,
     letterSpacing: 20,
+  );
+
+  static const TextStyle primaryText = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.w300,
+  );
+
+  static const TextStyle submitButtonText = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.w300,
   );
 }
 
