@@ -18,6 +18,12 @@ class KConstants {
     mediumDifficulty,
     hardDifficulty,
   ];
+
+  static const Map<String, String> toApiSlug = {
+    easyDifficulty: 'easy',
+    mediumDifficulty: 'medium',
+    hardDifficulty: 'hard',
+  };
 }
 
 class KTextStyle {

@@ -15,11 +15,21 @@ class MainViewPage extends StatelessWidget {
         actions: [],
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
-      body: ValueListenableBuilder(
-        valueListenable: selectedPageNotifier,
-        builder: (context, selectedPage, child) {
-          return pages.elementAt(selectedPage);
-        },
+      body: Column(
+        children: [
+          ValueListenableBuilder(
+            valueListenable: scoreNotifier,
+            builder: (context, score, child) {
+              return Text(score.toString());
+            },
+          ),
+          ValueListenableBuilder(
+            valueListenable: selectedPageNotifier,
+            builder: (context, selectedPage, child) {
+              return pages.elementAt(selectedPage);
+            },
+          ),
+        ],
       ),
       bottomNavigationBar: NavigationBar(
         destinations: [
