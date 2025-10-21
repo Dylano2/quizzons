@@ -13,6 +13,9 @@ class KConstants {
   static const String easyDifficulty = "Facile";
   static const String mediumDifficulty = "Moyenne";
   static const String hardDifficulty = "Hardcore";
+
+  static const String finalScore = 'Ton score final :';
+
   static const List<String> difficultyLevels = [
     easyDifficulty,
     mediumDifficulty,
@@ -47,6 +50,9 @@ class KTextStyle {
     fontSize: 25,
     fontWeight: FontWeight.w300,
   );
+
+  static const TextStyle finalScoreLabel = TextStyle(fontSize: 30);
+  static const TextStyle score = TextStyle(fontSize: 30);
 }
 
 class KButtonStyle {

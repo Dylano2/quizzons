@@ -21,25 +21,37 @@ class DisplayQuestion extends StatelessWidget {
     print(question.toString());
 
     answers.shuffle();
-    return Column(
-      children: [
-        Text(question.question),
-        ...answers.map(
-          (answer) => ValueListenableBuilder(
-            valueListenable: scoreNotifier,
-            builder: (context, score, child) {
-              return ElevatedButton(
-                onPressed: () {
-                  print(answer);
-                  scoreNotifier.value += checkAnswer(question, answer);
-                  onClick();
-                },
-                child: Text(answer),
-              );
-            },
+    return Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 150,
+            child: Text(question.question, style: TextStyle(fontSize: 20)),
           ),
-        ),
-      ],
+          ...answers.map(
+            (answer) => Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ValueListenableBuilder(
+                valueListenable: scoreNotifier,
+                builder: (context, score, child) {
+                  return ElevatedButton(
+                    onPressed: () {
+                      scoreNotifier.value += checkAnswer(question, answer);
+                      onClick();
+                    },
+                    child: SizedBox(
+                      width: 200,
+                      height: 50,
+                      child: Center(child: Text(answer)),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
